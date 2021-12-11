@@ -1,0 +1,38 @@
+{%extends 'main.html'%}
+{%block title%}Title of signup{%endblock%}
+{%block body%}
+{%load static%}
+{%for msg in message%}
+<b>Title</b>{{msg.tags}},<br>  <p>{{msg}}</p>
+{%endfor%}
+<form action="../signupaction/" method="post">
+    {% csrf_token%}
+  <div class="form-group">
+    <label for="username">User Name</label>
+    <input type="text" class="form-control" id="username" name="uname" aria-describedby="emailHelp">
+  </div>
+
+    <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="emailHelp">
+    </div>
+
+    <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="emailHelp">
+    </div>
+
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{%endblock%}

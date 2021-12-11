@@ -1,0 +1,38 @@
+{%extends 'main.html'%}
+{%block title%}Title of open Page{%endblock%}
+{%block body%}
+<form action="../showlist/" method="post">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+        <th scope="col">List</th>
+      <th scope="col">customer_account_no</th>
+      <th scope="col">customer_name</th>
+      <th scope="col">type_account</th>
+        <th scope="col">customer_address</th>
+        <th scope="col">contact_no</th>
+        <th scope="col">date</th>
+        <th scope="col">image</th>
+        <th scope="col">amount</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+  {%for i in bank %}
+  <tr>
+        <th scope="row">1</th>
+        <td>{{i.customer_account_no}}</td>
+        <td>{{i.customer_name}}</td>
+        <td>{{i.type_account}}</td>
+        <td>{{i.customer_address}}</td>
+         <td>{{i.contact_no}}</td>
+         <td>{{i.date}}</td>
+         <td><img src='/media/{{i.Image}}'></td>
+         <td>{{i.amount}}</td>
+    </tr>
+{%endfor%}
+  </tbody>
+</table>
+</form>
+{%endblock%}

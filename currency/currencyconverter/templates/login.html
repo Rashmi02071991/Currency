@@ -1,0 +1,29 @@
+{%extends 'main.html'%}
+{%block title%}Title of signup{%endblock%}
+{%block body%}
+{%load static%}
+{%for msg in message%}
+<b>Title</b>{{msg.tags}},<br>  <p>{{msg}}</p>
+{%endfor%}
+<form action="../loginaction/" method="post">
+    {% csrf_token%}
+
+  <div class="form-group">
+    <label for="exampleDropdownFormEmail2">Email address</label>
+    <input type="email" class="form-control" id="exampleDropdownFormEmail2"  name="email" placeholder="enter email address">
+  </div>
+  <div class="form-group">
+    <label for="exampleDropdownFormPassword2">Password</label>
+    <input type="password" class="form-control" id="exampleDropdownFormPassword2" name="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+      <label class="form-check-label" for="dropdownCheck2">
+        Remember me
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign_in</button>
+</form>
+    {%endblock%}

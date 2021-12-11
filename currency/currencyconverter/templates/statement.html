@@ -1,0 +1,17 @@
+{%extends 'main.html'%}
+{%block title%}Title of statement Page{%endblock%}
+{%block body%}
+{%load static%}
+
+<form action="../statementresult/" method="post">
+     {% csrf_token %}
+  <div class="form-group">
+    <label for="accountno">Account_no</label>
+    <input type="text" class="form-control" id="accountno"  name="ac" aria-describedby="emailHelp">
+
+
+  </div>
+
+    <button type="submit" class="btn btn-primary">view Detail Statement</button>
+</form>
+    {%endblock%}
